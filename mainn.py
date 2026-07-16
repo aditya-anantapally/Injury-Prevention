@@ -1,5 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
+api_key = st.secrets["GOOGLE_API_KEY"]
+genai.configure(api_key=api_key)
 model=genai.GenerativeModel("gemini-2.5-flash")
 # Inject light-blue background for the Streamlit app
 st.markdown(
