@@ -36,7 +36,7 @@ Other_Notes=st.text_area("Enter athlete other notes: ")
 prompt=f"""You are an experienced sports scientist and injury prevention specialist.Dont add unnessecary text about yourself.
 Analyze the following athlete profile and estimate their injury risk level .
 Use evidence-based reasoning related to biomechanics, training load, sport-specific in jury patterns, and history of previous injuries.
-Then, explain why the athlete has that risk level and give 3–5 actionable recommendations to reduce injury risk as well as a recovery plan to help any current injuries heal by giving a schedule for each day of the week to maximize the healing process.Use mainly things that can be done by a average youth soccer player(no crazy expensive equipment, dont change the current practices they have since coaches will not change their practice session. do mainly things outside of practice. and remeber lots of users are in school so they have a limited  time )                  
+Then, explain why the athlete has that risk level and give 3–5 actionable recommendations to reduce injury risk as well as a recovery plan to help any current injuries heal by giving a schedule for each day of the week to maximize the healing process.Use mainly things that can be done by a average athlete (no crazy expensive equipment, dont change the current practices they have since coaches will not change their practice session. do mainly things outside of practice. and remeber lots of users are in school so they have a limited  time ). Also try to come up with good meal plans based on different budgets to help with any deficiencies.                  
 Athlete Data:     
 Name: {name}    
 Age: {Age}    
@@ -59,6 +59,7 @@ Injury Risk Level: (give a risk estimate)
 Risk Factors Identified: (list specific reasons)   
 Recommendations to Reduce Injury Risk:
 Recovery Plan: (Provide a day-by-day schedule for healing)
+Meal Plan: (Include a 7-day meal-by-meal diet plan with breakfast, lunch, dinner, snacks, hydration, ingredients, step-by-step recipes, estimated macros, average US grocery prices per meal, and total daily food cost tailored to athlete.)
 """
 
 st.write("Is all this info correct? If so, please proceed to get your injury risk analysis and recommendations.")
@@ -72,8 +73,3 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
 
 
 
-
-# Nutrition prompt enhancement:
-# Ask AI to include a 7-day meal-by-meal diet plan with breakfast, lunch, dinner,
-# snacks, hydration, ingredients, step-by-step recipes, estimated macros,
-# average US grocery prices per meal, and total daily food cost tailored to athlete.
