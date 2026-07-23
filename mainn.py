@@ -60,8 +60,7 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
     Use evidence-based reasoning related to biomechanics, training load, sport-specific injury patterns, and history of previous injuries.
     Then, explain why the athlete has that risk level and give 3–5 actionable recommendations to reduce injury risk as well as a recovery plan to help any current injuries heal by giving a schedule for each day of the week to maximize the healing process.Use mainly things that can be done by a average athlete (no crazy expensive equipment, dont change the current practices they have since coaches will not change their practice session. do mainly things outside of practice. and remeber lots of users are in school so they have a limited  time ). Also try to come up with good meal plans based on different budgets to help with any deficiencies.                  
     Athlete Data:      
-    Age: {Age}    
-    Gender: {Gender}    
+    Age: {Age}        
     Weight: {Weight}   
     Height: {Height}
     Sport Category: {Sport_Category}
