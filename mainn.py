@@ -84,12 +84,18 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
     with st.spinner("Processing your data..."):
         try:
             response=model.generate_content(prompt, stream=True)  
+            progress_bar=st.progress(0.0)
             text_placeholder=st.empty()
             full_text= ""
+            current_progress=0.0
             for chunk in response:
                 if chunk.candidates and chunk.candidates[0].content.parts:
                     full_text += chunk.text
                     text_placeholder.markdown(full_text)
+                    if current_progress<0.95:
+                        current:progress+=0.5
+                        progress_bar.progress(current_progress)
+            progress_bar.progress(1.0)
                 full_text += chunk.text
         except ValueError as ve:
             st.info("Wrapping up the final formatting, click the button again if your report didn't fully load!")
