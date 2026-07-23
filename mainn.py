@@ -21,11 +21,11 @@ st.write( "Hi " + name, " Please fill in the details below. The more detail the 
 st.markdown("Demographics and Biometrics")
 col1, col2=st.columns(2)
 with col1:
-Age=st.number_input("Enter athlete age: ", min_value=1, max_value=100, step=1)
-Weight=st.number_input("Enter athlete weight (in lbs): ", min_value=1, max_value=1000, step=1)
+    Age=st.number_input("Enter athlete age: ", min_value=1, max_value=100, step=1)
+    Weight=st.number_input("Enter athlete weight (in lbs): ", min_value=1, max_value=1000, step=1)
 with col2:
-Gender=st.selectbox("Select athlete gender: ", ["Male", "Female", "Other"]) 
-Height=st.number_input("Enter athlete height (in inches): ", min_value=1, max_value=120, step=1)
+    Gender=st.selectbox("Select athlete gender: ", ["Male", "Female", "Other"]) 
+    Height=st.number_input("Enter athlete height (in inches): ", min_value=1, max_value=120, step=1)
 st.write("---")
 st.markdown("Sport Profile")
 Sport_Category=st.radio("Choose category: ", ["Traditional team/Individual sport", "Martial arts/Combat sports"],
@@ -45,9 +45,9 @@ Recent_Injuries=st.text_area("Enter athlete current injuries: ")
 Current_Training_Frequency=st.text_input("Enter athlete current training frequency and duration (e.g., 2 days/week on tuesdays and thursdays for 3 hours): ")
 col3, col4=st.columns(2)
 with col3:
-Games_Per_Week=st.number_input("Enter athlete games per week on average if applicable: ", min_value=0, max_value=14, step=1)
+    Games_Per_Week=st.number_input("Enter athlete games per week on average if applicable: ", min_value=0, max_value=14, step=1)
 with col4:
-Average_Minutes_Played_Per_Game=st.number_input("Enter athlete average minutes played per game if applicable: ", min_value=0, max_value=240, step=1)
+    Average_Minutes_Played_Per_Game=st.number_input("Enter athlete average minutes played per game if applicable: ", min_value=0, max_value=240, step=1)
 Dietary_Habits=st.text_area("Enter athlete dietary habits: ")
 Other_Notes=st.text_area("Enter athlete other notes: ")
 
