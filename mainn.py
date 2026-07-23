@@ -86,9 +86,9 @@ Recovery Plan: (Provide a day-by-day schedule for healing)
 Meal Plan: (Include a 7-day meal-by-meal diet plan with breakfast, lunch, dinner, snacks, hydration, ingredients, step-by-step recipes, estimated macros, average US grocery prices per meal, and total daily food cost tailored to athlete.)
 """
 st.write("### Injury Risk Analysis and Recommendations")
-    with st.spinner("Processing your data..."):
-        response=model.generate_content(prompt)   
-    st.write(response.text)
+with st.spinner("Processing your data..."):
+    response=model.generate_content(prompt)   
+st.write(response.text)
 
 
 
