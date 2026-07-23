@@ -84,7 +84,7 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
     with st.spinner("Processing your data..."):
         try:
             response=model.generate_content(prompt, stream=True)  
-            placeholder=st.empty()
+            text_placeholder=st.empty()
             full_text= ""
             for chunk in response:
                 if chunk.candidates and chunk.candidates[0].content.parts:
