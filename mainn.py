@@ -15,16 +15,14 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.title("Welcome to the  Injury Recovery/Prevention App ")
-name= st.text_input("Enter athlete name: ") 
-st.write( "Hi " + name, " Please fill in the details below. The more detail the better!")
+st.title("Welcome to the  Injury Recovery/Prevention App ") 
+st.write( "Hi, please fill in the details below.")
 st.markdown("Demographics and Biometrics")
 col1, col2=st.columns(2)
 with col1:
     Age=st.number_input("Enter athlete age: ", min_value=1, max_value=100, step=1)
     Weight=st.number_input("Enter athlete weight (in lbs): ", min_value=1, max_value=1000, step=1)
-with col2:
-    Gender=st.selectbox("Select athlete gender: ", ["Male", "Female", "Other"]) 
+with col2: 
     Height=st.number_input("Enter athlete height (in inches): ", min_value=1, max_value=120, step=1)
 st.write("---")
 st.markdown("Sport Profile")
@@ -77,7 +75,6 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
     Games Per Week: {Games_Per_Week}
     Average Minutes Played Per Game: {Average_Minutes_Played_Per_Game}
     Dietary Habits: {Dietary_Habits}
-    Other Notes: {Other_Notes}
     Output Format:
     Injury Risk Level: (give a risk estimate)
     Risk Factors Identified: (list specific reasons)   
@@ -87,8 +84,14 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
     """
     st.write("### Injury Risk Analysis and Recommendations")
     with st.spinner("Processing your data..."):
-        response=model.generate_content(prompt)   
-        st.write(response.text)
+        try:
+            response=model.generate_content(prompt stream=True)  
+            placeholder=st.empty()
+            full_text= ""
+            for chunk in response:
+                full_text += chunk.text
+                placeholder.markdown(full_text)
+    
 
 
 
