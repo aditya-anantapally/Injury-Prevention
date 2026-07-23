@@ -96,7 +96,7 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
                         current_progress+=0.5
                         progress_bar.progress(current_progress)
             progress_bar.progress(1.0)
-                full_text += chunk.text
+            full_text += chunk.text
         except ValueError as ve:
             st.info("Wrapping up the final formatting, click the button again if your report didn't fully load!")
 
