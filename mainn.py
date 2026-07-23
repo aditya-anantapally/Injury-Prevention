@@ -87,10 +87,14 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
             placeholder=st.empty()
             full_text= ""
             for chunk in response:
+                if chunk.candidates and chunk.candidates[0].content.parts:
+                    full_text += chunk.text
+                    text_placeholder.markdown(full_text)
                 full_text += chunk.text
-                placeholder.markdown(full_text)
-        except Exception as e:
-            st.error(f"API Error: {e}")
+        except ValueError as ve:
+            st.info("Wrapping up the final formatting, click the button again if your report didn't fully load!")
+        except Exception as e"
+            st.info("Backend processing lag, lets try that one more time!")
 
 
 
