@@ -91,7 +91,8 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
             for chunk in response:
                 full_text += chunk.text
                 placeholder.markdown(full_text)
-    
+        except Exception as e:
+            st.error(f"API Error: {e}")
 
 
 
