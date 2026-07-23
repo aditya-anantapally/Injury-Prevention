@@ -53,9 +53,10 @@ Other_Notes=st.text_area("Enter athlete other notes: ")
 
 st.write("Is all this info correct? If so, please proceed to get your injury risk analysis and recommendations.")
 if st.button("Get Injury Risk Analysis and Recommendations"):
-    if Sport_Category == "Traditional team/Individual sport":
+if Sport_Category == "Traditional team/Individual sport":
     final_rank_string= f"Competition Level: {User_Level} Position: {Position}"
-else: final_rank_string= f"Belt Color/Rank: {User_Level}"
+else: 
+    final_rank_string= f"Belt Color/Rank: {User_Level}"
 prompt=f"""You are an experienced sports scientist and injury prevention specialist.Dont add unnessecary text about yourself.
 Analyze the following athlete profile and estimate their injury risk level based on the type of sport they play and their level is defined as '{final_rank_string}'.
 Use evidence-based reasoning related to biomechanics, training load, sport-specific injury patterns, and history of previous injuries.
