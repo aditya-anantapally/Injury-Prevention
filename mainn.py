@@ -87,8 +87,8 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
     """
     st.write("### Injury Risk Analysis and Recommendations")
     with st.spinner("Processing your data..."):
-    response=model.generate_content(prompt)   
-    st.write(response.text)
+        response=model.generate_content(prompt)   
+        st.write(response.text)
 
 
 
