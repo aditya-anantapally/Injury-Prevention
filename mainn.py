@@ -93,7 +93,7 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
                     full_text += chunk.text
                     text_placeholder.markdown(full_text)
                     if current_progress<0.95:
-                        current:progress+=0.5
+                        current_progress+=0.5
                         progress_bar.progress(current_progress)
             progress_bar.progress(1.0)
                 full_text += chunk.text
