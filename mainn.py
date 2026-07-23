@@ -57,38 +57,38 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
         final_rank_string= f"Competition Level: {User_Level} Position: {Position}"
     else: 
         final_rank_string= f"Belt Color/Rank: {User_Level}"
-prompt=f"""You are an experienced sports scientist and injury prevention specialist.Dont add unnessecary text about yourself.
-Analyze the following athlete profile and estimate their injury risk level based on the type of sport they play and their level is defined as '{final_rank_string}'.
-Use evidence-based reasoning related to biomechanics, training load, sport-specific injury patterns, and history of previous injuries.
-Then, explain why the athlete has that risk level and give 3–5 actionable recommendations to reduce injury risk as well as a recovery plan to help any current injuries heal by giving a schedule for each day of the week to maximize the healing process.Use mainly things that can be done by a average athlete (no crazy expensive equipment, dont change the current practices they have since coaches will not change their practice session. do mainly things outside of practice. and remeber lots of users are in school so they have a limited  time ). Also try to come up with good meal plans based on different budgets to help with any deficiencies.                  
-Athlete Data:     
-Name: {name}    
-Age: {Age}    
-Gender: {Gender}    
-Weight: {Weight}   
-Height: {Height}
-Sport Category: {Sport_Category}
-Intensity Level: {Intensity_Level}
-Sport: {Sport_Name}  ({final_rank_string})
-Intensity Level: {Intensity_Level}
-Previous Injuries: {Previous_Injuries}
-Recent Injuries: {Recent_Injuries}
-Current Training Frequency: {Current_Training_Frequency}
-Games Per Week: {Games_Per_Week}
-Average Minutes Played Per Game: {Average_Minutes_Played_Per_Game}
-Dietary Habits: {Dietary_Habits}
-Other Notes: {Other_Notes}
-Output Format:
-Injury Risk Level: (give a risk estimate)
-Risk Factors Identified: (list specific reasons)   
-Recommendations to Reduce Injury Risk:
-Recovery Plan: (Provide a day-by-day schedule for healing)
-Meal Plan: (Include a 7-day meal-by-meal diet plan with breakfast, lunch, dinner, snacks, hydration, ingredients, step-by-step recipes, estimated macros, average US grocery prices per meal, and total daily food cost tailored to athlete.)
-"""
-st.write("### Injury Risk Analysis and Recommendations")
-with st.spinner("Processing your data..."):
+    prompt=f"""You are an experienced sports scientist and injury prevention specialist.Dont add unnessecary text about yourself.
+    Analyze the following athlete profile and estimate their injury risk level based on the type of sport they play and their level is defined as '{final_rank_string}'.
+    Use evidence-based reasoning related to biomechanics, training load, sport-specific injury patterns, and history of previous injuries.
+    Then, explain why the athlete has that risk level and give 3–5 actionable recommendations to reduce injury risk as well as a recovery plan to help any current injuries heal by giving a schedule for each day of the week to maximize the healing process.Use mainly things that can be done by a average athlete (no crazy expensive equipment, dont change the current practices they have since coaches will not change their practice session. do mainly things outside of practice. and remeber lots of users are in school so they have a limited  time ). Also try to come up with good meal plans based on different budgets to help with any deficiencies.                  
+    Athlete Data:     
+    Name: {name}    
+    Age: {Age}    
+    Gender: {Gender}    
+    Weight: {Weight}   
+    Height: {Height}
+    Sport Category: {Sport_Category}
+    Intensity Level: {Intensity_Level}
+    Sport: {Sport_Name}  ({final_rank_string})
+    Intensity Level: {Intensity_Level}
+    Previous Injuries: {Previous_Injuries}
+    Recent Injuries: {Recent_Injuries}
+    Current Training Frequency: {Current_Training_Frequency}
+    Games Per Week: {Games_Per_Week}
+    Average Minutes Played Per Game: {Average_Minutes_Played_Per_Game}
+    Dietary Habits: {Dietary_Habits}
+    Other Notes: {Other_Notes}
+    Output Format:
+    Injury Risk Level: (give a risk estimate)
+    Risk Factors Identified: (list specific reasons)   
+    Recommendations to Reduce Injury Risk:
+    Recovery Plan: (Provide a day-by-day schedule for healing)
+    Meal Plan: (Include a 7-day meal-by-meal diet plan with breakfast, lunch, dinner, snacks, hydration, ingredients, step-by-step recipes, estimated macros, average US grocery prices per meal, and total daily food cost tailored to athlete.)
+    """
+    st.write("### Injury Risk Analysis and Recommendations")
+    with st.spinner("Processing your data..."):
     response=model.generate_content(prompt)   
-st.write(response.text)
+    st.write(response.text)
 
 
 
