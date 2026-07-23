@@ -81,13 +81,13 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
     Meal Plan: (Include a 7-day meal-by-meal diet plan with breakfast, lunch, dinner, snacks, hydration, ingredients, step-by-step recipes, estimated macros, average US grocery prices per meal, and total daily food cost tailored to athlete.)
     """
     st.write("### Injury Risk Analysis and Recommendations")
-    with st.spinner("Processing your data..."):
-        try:
-            response=model.generate_content(prompt, stream=True)  
             progress_bar=st.progress(0.0)
             text_placeholder=st.empty()
             full_text= ""
             current_progress=0.0
+    with st.spinner("Processing your data..."):
+        try:
+            response=model.generate_content(prompt, stream=True)  
             for chunk in response:
                 if chunk.candidates and chunk.candidates[0].content.parts:
                     full_text += chunk.text
