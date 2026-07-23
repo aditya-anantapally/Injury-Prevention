@@ -93,7 +93,7 @@ if st.button("Get Injury Risk Analysis and Recommendations"):
                 full_text += chunk.text
         except ValueError as ve:
             st.info("Wrapping up the final formatting, click the button again if your report didn't fully load!")
-        except Exception as e"
+        except Exception as e:
             st.info("Backend processing lag, lets try that one more time!")
 
 
